@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Department Edit</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'apple-touch-icon.png' %}"
+    />
+    <link rel="manifest" href=" {% static 'site.webmanifest' %}" />
+    <link
+      rel="shortcut icon"
+      href=" {% static 'favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <link rel="icon" href=" {% static 'favicon.ico' %}" type="image/x-icon" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_Delete_Static/vendor/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_Delete_Static/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_Delete_Static/vendor/animate/animate.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_Delete_Static/vendor/css-hamburgers/hamburgers.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_Delete_Static/vendor/animsition/css/animsition.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_Delete_Static/vendor/select2/select2.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_Delete_Static/vendor/daterangepicker/daterangepicker.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_Delete_Static/css/util.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_Delete_Static/css/main.css' %}"
+    />
+    <!--===============================================================================================-->
+  </head>
+  <body>
+    <div
+      class="container-contact100"
+      style="background: linear-gradient(45deg, #000000, #000000)"
+    >
+      <div class="wrap-contact100">
+        <form
+          class="contact100-form validate-form"
+          action="{% url 'employee:department_update'%}"
+          method="POST"
+          id="myform"
+        >
+          {% csrf_token %}
+          <span class="contact100-form-title">Department Information </span>
+          {% for i in tb_cateory_3_data %}
+          <input type="hidden" name="id_index_3" value="{{i.0}}" />
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <input
+              class="input100"
+              type="text"
+              name="department_code"
+              value="{{i.1}}"
+            />
+            <span class="focus-input100"></span>
+          </div>
+
+          <div
+            class="wrap-input100 validate-input"
+            data-validate="Name is required"
+          >
+            <input
+              class="input100"
+              type="text"
+              name="department_name"
+              value="{{i.2}}"
+            />
+            <span class="focus-input100"></span>
+          </div>
+          {% endfor %}
+
+          <div class="container-contact100-form-btn">
+            <div class="wrap-contact100-form-btn">
+              <div class="contact100-form-bgbtn"></div>
+              <button
+                type="submit"
+                class="contact100-form-btn"
+                form="myform"
+                formmethod="POST"
+                style="background: linear-gradient(45deg, #000000, #000000)"
+              >
+                <span>
+                  Submit
+                  <i
+                    class="fa fa-long-arrow-right m-l-7"
+                    aria-hidden="true"
+                  ></i>
+                </span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!--===============================================================================================-->
+    <script src="{% static 'Employee_Delete_Static/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'Employee_Delete_Static/vendor/animsition/js/animsition.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'Employee_Delete_Static/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'Employee_Delete_Static/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'Employee_Delete_Static/vendor/daterangepicker/moment.min.js' %}"></script>
+    <script src="{% static 'Employee_Delete_Static/vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'Employee_Delete_Static/vendor/countdowntime/countdowntime.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'Employee_Delete_Static/js/main.js' %}"></script>
+  </body>
+</html>

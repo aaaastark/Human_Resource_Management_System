@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="no-js ss-preload" lang="en">
+  <head>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8" />
+    <title>HRMS</title>
+    <meta name="description" content="Human Resources Management System" />
+    <meta name="author" content="Muhammad Allah Rakha" />
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS
+    ================================================== -->
+    <link
+      rel="stylesheet"
+      href="{% static 'Display_Main_Static/css/vendor.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'Display_Main_Static/css/styles.css' %}"
+    />
+
+    <!-- favicons
+    ================================================== -->
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'apple-touch-icon.png' %}"
+    />
+    <link rel="manifest" href=" {% static 'site.webmanifest' %}" />
+    <link
+      rel="shortcut icon"
+      href=" {% static 'favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <link rel="icon" href=" {% static 'favicon.ico' %}" type="image/x-icon" />
+  </head>
+
+  <body id="top">
+    <!-- # preloader
+    ================================================== -->
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
+
+    <!-- # page wrap
+    ================================================== -->
+    <div class="s-pagewrap">
+      <div class="circles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- ## site header 
+        ================================================== -->
+      <header class="s-header">
+        <div class="header-mobile">
+          <span class="mobile-home-link"
+            ><a href="hrms_index.html">HRMS.</a></span
+          >
+          <a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
+        </div>
+
+        <div class="row wide main-nav-wrap">
+          <nav class="column lg-12 main-nav">
+            <ul>
+              <li class="current">
+                <a href="#intro" class="smoothscroll">HOME</a>
+              </li>
+
+              {% if user.is_authenticated %}
+              <li><a href="#employee" class="smoothscroll">EMPLOYEE</a></li>
+              <li><a href="#logout" class="smoothscroll">LOGOUT</a></li>
+              {% else %}
+              <li><a href="#about" class="smoothscroll">ABOUT</a></li>
+              <li>
+                <a href="#login_signup" class="smoothscroll">LOGIN-SIGNUP</a>
+              </li>
+              <li><a href="#contact" class="smoothscroll">CONTACT</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- end s-header -->
+
+      <!-- ## main content
+        ==================================================- -->
+      <main class="s-content">
+        <!-- ### intro
+            ================================================== -->
+        <section id="intro" class="s-intro target-section">
+          <div class="row intro-content wide">
+            <div class="column">
+              <div class="text-pretitle with-line">AAAA STARK</div>
+
+              <h1 class="text-huge-title">
+                Human Resource Management System (HRMS) Website Application.
+                <br />Employee Dashboard.
+              </h1>
+            </div>
+
+            <ul class="intro-social">
+              <li>
+                <a
+                  href="https://www.google.com/search?q=AAAA+STARK&oq=aaAA+STARK&aqs=chrome.0.69i59l2j69i61l2j69i60.1120j0j7&sourceid=chrome&ie=UTF-8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GOOGLE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/channel/UCgPu2X7ehI4h6DsVM8zEz8A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >YOUTUBE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/aaaastark"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GITHUB</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/a-a-a-a-stark-69696617b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LINKEDIN</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- end intro content -->
+
+          <a href="#about" class="intro-scrolldown smoothscroll">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+            >
+              <path
+                d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"
+              />
+            </svg>
+          </a>
+        </section>
+        <!-- end s-intro -->
+
+        <!-- ### about
+            ================================================== -->
+        {% if user.is_authenticated %} {% else %}
+        <section id="about" class="s-about target-section">
+          <div class="row about-info wide" data-animate-block>
+            <div class="column lg-6 md-12 about-info__pic-block">
+              <img
+                src="{% static 'Display_Main_Static/images/hrms_2.jpg' %}"
+                srcset="{% static 'Display_Main_Static/images/hrms_2.jpg' %} 1x, {% static 'Display_Main_Static/images/hrms_2.jpg' %} 2x"
+                alt=""
+                class="about-info__pic"
+                data-animate-el
+              />
+            </div>
+
+            <div class="column lg-6 md-12">
+              <div class="about-info__text">
+                <h2 class="text-pretitle with-line" data-animate-el>ABOUT</h2>
+                <p class="attention-getter" data-animate-el>
+                  I'm a passionate Author, Data Scientist, Software Developer,
+                  Application (Desktop & Moblile) Developer and Full Stock Web
+                  Developer from Pakistan.
+                </p>
+                <a
+                  href="https://aaaastark.herokuapp.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn--medium u-fullwidth"
+                  data-animate-el
+                  >WEBSITE</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- about-info -->
+        </section>
+        {% endif %}
+        <!-- end s-about -->
+
+        {% if user.is_authenticated %}
+        <section id="employee" class="s-works target-section">
+          <div
+            class="row about-expertise"
+            style="padding-top: var(--space)"
+            data-animate-block
+          >
+            {% comment %}
+            <ul class="skills-list h1" data-animate-el>
+              <li class="text-center">EMPLOYEE (HRMS SYSTEM)</li>
+            </ul>
+            {% endcomment %}
+            <div class="column">
+              <div class="text-pretitle with-line">AAAA STARK</div>
+
+              <h1 class="text-huge-title">Employee System!</h1>
+            </div>
+
+            <div class="column lg-12">
+              <h2 class="text-pretitle" data-animate-el>
+                <a
+                  href="{% url 'employee:employee_index_view' %}"
+                  class="btn btn--medium u-fullwidth"
+                  data-animate-el
+                  >EMPLOYEE
+                </a>
+              </h2>
+              <h2 class="text-pretitle" data-animate-el>
+                <a
+                  href="{% url 'employee:leave_index_view' %}"
+                  class="btn btn--medium u-fullwidth"
+                  data-animate-el
+                  >LEAVES
+                </a>
+              </h2>
+              <h2 class="text-pretitle" data-animate-el>
+                <a
+                  href="{% url 'employee:holiday_index_view' %}"
+                  class="btn btn--medium u-fullwidth"
+                  data-animate-el
+                  >HOLLIDAYS
+                </a>
+              </h2>
+              <h2 class="text-pretitle" data-animate-el>
+                <a
+                  href="{% url 'employee:department_index_view' %}"
+                  class="btn btn--medium u-fullwidth"
+                  data-animate-el
+                  >DEPARTMENT
+                </a>
+              </h2>
+              <h2 class="text-pretitle" data-animate-el>
+                <a
+                  href="{% url 'employee:designation_index_view' %}"
+                  class="btn btn--medium u-fullwidth"
+                  data-animate-el
+                  >DESIGNATION
+                </a>
+              </h2>
+              <h2 class="text-pretitle" data-animate-el>
+                <a
+                  href="{% url 'employee:timesheet_index_view' %}"
+                  class="btn btn--medium u-fullwidth"
+                  data-animate-el
+                  >TIMESHEET
+                </a>
+              </h2>
+            </div>
+          </div>
+        </section>
+
+        {% else %}
+
+        <section id="login_signup" class="s-works target-section">
+          <div
+            class="row about-expertise"
+            style="padding-top: var(--space)"
+            data-animate-block
+          >
+            <div class="column lg-12">
+              <h2 class="text-pretitle" data-animate-el>USER</h2>
+              <ul class="skills-list h1" data-animate-el>
+                <li>USER AUTHORIZATION ACCESS POINT</li>
+              </ul>
+            </div>
+          </div>
+          <!-- end about-expertise -->
+
+          <div class="row about-timelines" data-animate-block>
+            <div class="column lg-6 tab-12">
+              <div class="timeline" data-animate-el>
+                <div class="timeline__block">
+                  <div class="timeline__header">
+                    <h4 class="timeline__title">USER LOGIN</h4>
+                    <a
+                      href="user_login/"
+                      class="btn btn--medium u-fullwidth"
+                      data-animate-el
+                      >LOGIN
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end column -->
+
+            <div class="column lg-6 tab-12">
+              <div class="timeline" data-animate-el>
+                <div class="timeline__block">
+                  <div class="timeline__header">
+                    <h4 class="timeline__title">USER SINGUP</h4>
+                    <a
+                      href="user_register/"
+                      class="btn btn--medium u-fullwidth"
+                      data-animate-el
+                      >SIGNUP</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end column -->
+          </div>
+          <!-- end about-timelines -->
+        </section>
+        {% endif %}
+
+        <!-- end contact -->
+      </main>
+
+      <!-- end s-content -->
+      <!-- ###  Logout and Content
+            ================================================== -->
+      {% if user.is_authenticated %}
+
+      <section id="logout" class="s-contact target-section">
+        <div class="row contact-top">
+          <div class="column lg-12">
+            <h2 class="text-pretitle">For The Logout User</h2>
+
+            <p class="h1">
+              Human Resource Management System <br />
+              Logout! Employee System
+            </p>
+          </div>
+        </div>
+        <!-- end contact-top -->
+
+        <div class="row contact-bottom">
+          <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
+            <h3 class="text-pretitle">REACH ME AT</h3>
+            <p class="contact-links">
+              <a href="mailto:4444stark@gmail.com" class="mailtoui"
+                >4444stark@gmail.com</a
+              >
+              <br />
+              <a href="tel:+923490175636">+92 349 0175636</a>
+            </p>
+          </div>
+          <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
+            <h3 class="text-pretitle">SOCIAL LINKS</h3>
+            <ul class="contact-social">
+              <li>
+                <a
+                  href="https://www.google.com/search?q=AAAA+STARK&oq=aaAA+STARK&aqs=chrome.0.69i59l2j69i61l2j69i60.1120j0j7&sourceid=chrome&ie=UTF-8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GOOGLE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/channel/UCgPu2X7ehI4h6DsVM8zEz8A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >YOUTUBE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/aaaastark"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GITHUB</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/a-a-a-a-stark-69696617b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LINKEDIN</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="column lg-4 md-12 contact-block">
+            <a
+              href="/user_logout/"
+              class="btn btn--medium u-fullwidth contact-btn"
+              >LOGOUT</a
+            >
+          </div>
+        </div>
+        <!-- end contact-bottom -->
+      </section>
+
+      {% else %}
+
+      <section id="contact" class="s-contact target-section">
+        <div class="row contact-top">
+          <div class="column lg-12">
+            <h2 class="text-pretitle">Get In Touch</h2>
+
+            <p class="h1">
+              I love to hear from you. Whether you have a question or just want
+              to chat about human resources management system web application —
+              shoot me a message.
+            </p>
+          </div>
+        </div>
+        <!-- end contact-top -->
+
+        <div class="row contact-bottom">
+          <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
+            <h3 class="text-pretitle">REACH ME AT</h3>
+            <p class="contact-links">
+              <a href="mailto:4444stark@gmail.com" class="mailtoui"
+                >4444stark@gmail.com</a
+              >
+              <br />
+              <a href="tel:+923490175636">+92 349 0175636</a>
+            </p>
+          </div>
+          <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
+            <h3 class="text-pretitle">SOCIAL LINKS</h3>
+            <ul class="contact-social">
+              <li>
+                <a
+                  href="https://www.google.com/search?q=AAAA+STARK&oq=aaAA+STARK&aqs=chrome.0.69i59l2j69i61l2j69i60.1120j0j7&sourceid=chrome&ie=UTF-8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GOOGLE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/channel/UCgPu2X7ehI4h6DsVM8zEz8A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >YOUTUBE</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/aaaastark"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GITHUB</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/a-a-a-a-stark-69696617b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >LINKEDIN</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="column lg-4 md-12 contact-block">
+            <a
+              href="mailto:4444stark@gmail.com"
+              class="mailtoui btn btn--medium u-fullwidth contact-btn"
+              >SAY HELLO.</a
+            >
+          </div>
+        </div>
+        <!-- end contact-bottom -->
+      </section>
+
+      {% endif %}
+      <!-- end contact -->
+
+      <!-- ## footer
+        ================================================== -->
+      <footer class="s-footer">
+        <div class="row">
+          <div class="column ss-copyright">
+            <span>© Copyright AAAA STARK 2021</span>
+            <span
+              >Design by
+              <a
+                href="https://aaaastark.herokuapp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >MUHAMMAD ALLAH RAKHA</a
+              ></span
+            >
+          </div>
+
+          <div class="ss-go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              >
+                <path
+                  d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </footer>
+      <!-- end s-footer -->
+    </div>
+    <!-- end -s-pagewrap -->
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="{% static 'Display_Main_Static/js/plugins.js' %}"></script>
+    <script src="{% static 'Display_Main_Static/js/main.js' %}"></script>
+  </body>
+</html>

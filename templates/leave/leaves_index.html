@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="no-js" lang="en">
+  <head>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8" />
+    <title>Leave</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS
+    ================================================== -->
+    <link
+      rel="stylesheet"
+      href="{% static 'Employee_Index_Static/css/base.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'Employee_Index_Static/css/main.css' %}"
+    />
+
+    <!-- script
+    ================================================== -->
+    <script src="{% static 'Employee_Index_Static/js/modernizr.js' %}"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'apple-touch-icon.png' %}"
+    />
+    <link rel="manifest" href=" {% static 'site.webmanifest' %}" />
+    <link
+      rel="shortcut icon"
+      href=" {% static 'favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <link rel="icon" href=" {% static 'favicon.ico' %}" type="image/x-icon" />
+  </head>
+
+  <body id="top">
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+      <div id="loader" class="dots-jump">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+      <nav class="header-nav-wrap">
+        <ul class="header-nav">
+          <li>
+            <div
+              class="column large-full hero-content__text"
+              style="margin-top: 100px"
+            >
+              <div class="hero-content__buttons">
+                <a href="/user_logout/" class="btn btn--stroke">LOGOUT</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+    </header>
+    <!-- end s-header -->
+
+    <!-- hero
+    ================================================== -->
+    <section
+      class="s-hero"
+      data-parallax="scroll"
+      data-image-src="{% static 'Employee_Index_Static/images/hero-bg-3000.jpg' %}"
+      data-natural-width="3000"
+      data-natural-height="2000"
+      data-position-y="center"
+    >
+      <div class="hero-left-bar"></div>
+
+      <div class="row hero-content">
+        <div class="column large-full hero-content__text">
+          <h1>
+            Welcome! Mr/Ms <br />
+            Leave
+          </h1>
+
+          <div class="hero-content__buttons">
+            <a href="{% url 'employee:leave_form' %}" class="btn btn--stroke"
+              >ADD LEAVE</a
+            >
+            <a href="{% url 'employee:leave_table' %}" class="btn btn--stroke"
+              >VIEW LEAVE</a
+            >
+          </div>
+        </div>
+        <!-- end hero-content__text -->
+      </div>
+      <!-- end hero-content -->
+
+      <ul class="hero-social">
+        <li class="hero-social__title">Follow Us</li>
+        <li>
+          <a
+            href="https://www.google.com/search?q=AAAA+STARK&oq=aaAA+STARK&aqs=chrome.0.69i59l2j69i61l2j69i60.1120j0j7&sourceid=chrome&ie=UTF-8"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Google</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.youtube.com/channel/UCgPu2X7ehI4h6DsVM8zEz8A"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YouTube</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/aaaastark"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/a-a-a-a-stark-69696617b"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+        </li>
+      </ul>
+    </section>
+    <!-- end s-hero -->
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="{% static 'Employee_Index_Static/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'Employee_Index_Static/js/plugins.js' %}"></script>
+    <script src="{% static 'Employee_Index_Static/js/main.js' %}"></script>
+  </body>
+</html>

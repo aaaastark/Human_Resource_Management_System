@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Employee Information</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
+      rel="stylesheet"
+    />
+    <!--===============================================================================================-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_TableView_Static/vendor/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_TableView_Static/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_TableView_Static/vendor/animate/animate.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_TableView_Static/vendor/select2/select2.min.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_TableView_Static/vendor/perfect-scrollbar/perfect-scrollbar.css' %}"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_TableView_Static/css/util.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_TableView_Static/css/main.css' %}"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'apple-touch-icon.png' %}"
+    />
+    <link rel="manifest" href=" {% static 'site.webmanifest' %}" />
+    <link
+      rel="shortcut icon"
+      href=" {% static 'favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <link rel="icon" href=" {% static 'favicon.ico' %}" type="image/x-icon" />
+    <!--===============================================================================================-->
+  </head>
+  <body>
+    <section>
+      <div class="limiter">
+        <div class="container-table100">
+          <div class="wrap-table100" style="margin-top: 10px">
+            <h1 class="display-1 fw-bolder text-center" style="color: #ffc800">
+              GENERAL INFORMATION
+            </h1>
+            <nav
+              class="navbar"
+              style="margin-bottom: 20px; background: #323131"
+            >
+              <div class="container-fluid navbar-brand d-flex">
+                <!--                    <a class="navbar-brand column1">Navbar</a>-->
+                <div class="navbar-brand d-flex input-group input-group-lg">
+                  <input
+                    class="form-control me-2"
+                    style="margin-left: 35px"
+                    id="myInput"
+                    type="text"
+                    placeholder="Search"
+                  />
+                  <button
+                    class="btn btn btn-outline-warning btn-lg"
+                    style="
+                      margin-left: 25px;
+                      padding-right: 50px;
+                      padding-left: 50px;
+                      justify-content: center;
+                    "
+                    onclick="myFunction()"
+                    type="button"
+                  >
+                    Search
+                  </button>
+                  <button
+                    class="btn btn btn-outline-warning btn-lg"
+                    style="
+                      margin-left: 25px;
+                      padding-right: 50px;
+                      padding-left: 50px;
+                      justify-content: center;
+                    "
+                    onclick="myClear()"
+                    type="button"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </div>
+            </nav>
+
+            <div class="table100">
+              <table>
+                <thead>
+                  <tr class="table100-head">
+                    <th class="column2">Index</th>
+                    <th class="column2">Personal Name</th>
+                    <th class="column2">Father Name</th>
+                    <th class="column2">Gender</th>
+                    <th class="column2">Age</th>
+                    <th class="column2">Height &amp; Weight</th>
+                    <th class="column2">Date Of Birth</th>
+                    <th class="column2">Matrial Status</th>
+                    <th class="column2">Languages Known</th>
+                    <th class="column2">Country</th>
+                    <th class="column2">Permanet Address</th>
+                    <th class="column2">Present Address</th>
+                    <th class="column2">Phone</th>
+                    <th class="column2">Email</th>
+                    <th class="column2">Editing</th>
+                    <th class="column2">Deleting</th>
+                  </tr>
+                </thead>
+                <tbody id="myTable">
+                  {% for i in tb_cateory_3_data %}
+                  <tr>
+                    <td class="column2">{{i.0}}</td>
+                    <td class="column2">{{i.1}}</td>
+                    <td class="column2">{{i.2}}</td>
+                    <td class="column2">{{i.3}}</td>
+                    <td class="column2">{{i.4}}</td>
+                    <td class="column2">{{i.5}}</td>
+                    <td class="column2">{{i.6}}</td>
+                    <td class="column2">{{i.7}}</td>
+                    <td class="column2">{{i.8}}</td>
+                    <td class="column2">{{i.9}}</td>
+                    <td class="column2">{{i.10}}</td>
+                    <td class="column2">{{i.11}}</td>
+                    <td class="column2">{{i.12}}</td>
+                    <td class="column2">{{i.13}}</td>
+                    <td class="column2">
+                      <button class="btn btn-outline-warning" type="submit">
+                        <a
+                          href="/employees/employee_table_edit/{{i.0}}"
+                          style="color: #000000"
+                          >Edit</a
+                        >
+                      </button>
+                    </td>
+                    <td class="column2">
+                      <button class="btn btn-outline-warning" type="submit">
+                        <a
+                          href="/employees/employee_table_delete_view/{{i.0}}"
+                          style="color: #000000"
+                          >Delete</a
+                        >
+                      </button>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <script>
+            function myFunction() {
+              var input, filter, table, tr, td, i, txtValue;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+
+              for (i = 0; i < tr.length; i++) {
+                td_0 = tr[i].getElementsByTagName("td")[0];
+                td_1 = tr[i].getElementsByTagName("td")[1];
+                td_2 = tr[i].getElementsByTagName("td")[2];
+                td_3 = tr[i].getElementsByTagName("td")[3];
+                td_4 = tr[i].getElementsByTagName("td")[4];
+                td_5 = tr[i].getElementsByTagName("td")[5];
+                td_6 = tr[i].getElementsByTagName("td")[6];
+                td_7 = tr[i].getElementsByTagName("td")[7];
+                td_8 = tr[i].getElementsByTagName("td")[8];
+                td_9 = tr[i].getElementsByTagName("td")[9];
+                td_10 = tr[i].getElementsByTagName("td")[10];
+                td_11 = tr[i].getElementsByTagName("td")[11];
+                if (
+                  td_0 ||
+                  td_1 ||
+                  td_2 ||
+                  td_3 ||
+                  td_4 ||
+                  td_5 ||
+                  td_6 ||
+                  td_7 ||
+                  td_8 ||
+                  td_9 ||
+                  td_10 ||
+                  td_11
+                ) {
+                  txtValue_0 = td_0.textContent || td_0.innerText;
+                  txtValue_1 = td_1.textContent || td_1.innerText;
+                  txtValue_2 = td_2.textContent || td_2.innerText;
+                  txtValue_3 = td_3.textContent || td_3.innerText;
+                  txtValue_4 = td_4.textContent || td_4.innerText;
+                  txtValue_5 = td_5.textContent || td_5.innerText;
+                  txtValue_6 = td_6.textContent || td_6.innerText;
+                  txtValue_7 = td_7.textContent || td_7.innerText;
+                  txtValue_8 = td_8.textContent || td_8.innerText;
+                  txtValue_9 = td_9.textContent || td_9.innerText;
+                  txtValue_10 = td_10.textContent || td_10.innerText;
+                  txtValue_11 = td_11.textContent || td_11.innerText;
+                  names_2 =
+                    txtValue_0.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_1.toUpperCase().indexOf(filter) > -1;
+                  names_4 =
+                    txtValue_2.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_3.toUpperCase().indexOf(filter) > -1;
+                  names_6 =
+                    txtValue_4.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_5.toUpperCase().indexOf(filter) > -1;
+                  names_8 =
+                    txtValue_6.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_7.toUpperCase().indexOf(filter) > -1;
+                  names_10 =
+                    txtValue_8.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_9.toUpperCase().indexOf(filter) > -1;
+                  names_12 =
+                    txtValue_10.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_11.toUpperCase().indexOf(filter) > -1;
+
+                  if (
+                    names_2 ||
+                    names_4 ||
+                    names_6 ||
+                    names_8 ||
+                    names_10 ||
+                    names_12
+                  ) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
+            }
+
+            function myClear() {
+              document.getElementById("myInput").value = "";
+              myFunction();
+            }
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="limiter">
+        <div class="container-table100">
+          <div class="wrap-table100" style="margin-top: 10px">
+            <h1 class="display-1 fw-bolder text-center" style="color: #ffc800">
+              JOB INFORMATION
+            </h1>
+            <nav
+              class="navbar"
+              style="margin-bottom: 20px; background: #323131"
+            >
+              <div class="container-fluid navbar-brand d-flex">
+                <!--                    <a class="navbar-brand column1">Navbar</a>-->
+                <div class="navbar-brand d-flex input-group input-group-lg">
+                  <input
+                    class="form-control me-2"
+                    style="margin-left: 35px"
+                    id="myInput_2"
+                    type="text"
+                    placeholder="Search"
+                  />
+                  <button
+                    class="btn btn btn-outline-warning btn-lg"
+                    style="
+                      margin-left: 25px;
+                      padding-right: 50px;
+                      padding-left: 50px;
+                      justify-content: center;
+                    "
+                    onclick="myFunction_2()"
+                    type="button"
+                  >
+                    Search
+                  </button>
+                  <button
+                    class="btn btn btn-outline-warning btn-lg"
+                    style="
+                      margin-left: 25px;
+                      padding-right: 50px;
+                      padding-left: 50px;
+                      justify-content: center;
+                    "
+                    onclick="myClear_2()"
+                    type="button"
+                  >
+                    Clear
+                  </button>
+                </div>
+              </div>
+            </nav>
+
+            <div class="table100">
+              <table>
+                <thead>
+                  <tr class="table100-head">
+                    <th class="column2">Index</th>
+                    <th class="column2">Title</th>
+                    <th class="column2">Employee ID</th>
+                    <th class="column2">Date of Appointment</th>
+                    <th class="column2">Date of Confirmation</th>
+                    <th class="column2">Date of Joining</th>
+                    <th class="column2">Department In Which Posted</th>
+                    <th class="column2">Monthly Contribution</th>
+                    <th class="column2">Eduction Qualification</th>
+                    <th class="column2">Professional Qualification</th>
+                    <th class="column2">Editing</th>
+                    <th class="column2">Deleting</th>
+                  </tr>
+                </thead>
+                <tbody id="myTable_2">
+                  {% for i in tb_cateory_4_data %}
+                  <tr>
+                    <td class="column2">{{i.0}}</td>
+                    <td class="column2">{{i.1}}</td>
+                    <td class="column2">{{i.2}}</td>
+                    <td class="column2">{{i.3}}</td>
+                    <td class="column2">{{i.4}}</td>
+                    <td class="column1">{{i.5}}</td>
+                    <td class="column2">{{i.6}}</td>
+                    <td class="column2">{{i.7}}</td>
+                    <td class="column2">{{i.8}}</td>
+                    <td class="column2">{{i.9}}</td>
+                    <td class="column2">
+                      <button class="btn btn-outline-warning" type="submit">
+                        <a
+                          href="/employees/employee_table_edit/{{i.0}}"
+                          style="color: #000000"
+                          >Edit</a
+                        >
+                      </button>
+                    </td>
+                    <td class="column2">
+                      <button class="btn btn-outline-warning" type="submit">
+                        <a
+                          href="/employees/employee_table_delete_view/{{i.0}}"
+                          style="color: #000000"
+                          >Delete</a
+                        >
+                      </button>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <script>
+            function myFunction_2() {
+              var input, filter, table, tr, td, i, txtValue;
+              input = document.getElementById("myInput_2");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable_2");
+              tr = table.getElementsByTagName("tr");
+
+              for (i = 0; i < tr.length; i++) {
+                td_0 = tr[i].getElementsByTagName("td")[0];
+                td_1 = tr[i].getElementsByTagName("td")[1];
+                td_2 = tr[i].getElementsByTagName("td")[2];
+                td_3 = tr[i].getElementsByTagName("td")[3];
+                td_4 = tr[i].getElementsByTagName("td")[4];
+                td_5 = tr[i].getElementsByTagName("td")[5];
+                td_6 = tr[i].getElementsByTagName("td")[6];
+                td_7 = tr[i].getElementsByTagName("td")[7];
+                td_8 = tr[i].getElementsByTagName("td")[8];
+                td_9 = tr[i].getElementsByTagName("td")[9];
+                td_10 = tr[i].getElementsByTagName("td")[10];
+                td_11 = tr[i].getElementsByTagName("td")[11];
+                if (
+                  td_0 ||
+                  td_1 ||
+                  td_2 ||
+                  td_3 ||
+                  td_4 ||
+                  td_5 ||
+                  td_6 ||
+                  td_7 ||
+                  td_8 ||
+                  td_9 ||
+                  td_10 ||
+                  td_11
+                ) {
+                  txtValue_0 = td_0.textContent || td_0.innerText;
+                  txtValue_1 = td_1.textContent || td_1.innerText;
+                  txtValue_2 = td_2.textContent || td_2.innerText;
+                  txtValue_3 = td_3.textContent || td_3.innerText;
+                  txtValue_4 = td_4.textContent || td_4.innerText;
+                  txtValue_5 = td_5.textContent || td_5.innerText;
+                  txtValue_6 = td_6.textContent || td_6.innerText;
+                  txtValue_7 = td_7.textContent || td_7.innerText;
+                  txtValue_8 = td_8.textContent || td_8.innerText;
+                  txtValue_9 = td_9.textContent || td_9.innerText;
+                  txtValue_10 = td_10.textContent || td_10.innerText;
+                  txtValue_11 = td_11.textContent || td_11.innerText;
+                  names_2 =
+                    txtValue_0.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_1.toUpperCase().indexOf(filter) > -1;
+                  names_4 =
+                    txtValue_2.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_3.toUpperCase().indexOf(filter) > -1;
+                  names_6 =
+                    txtValue_4.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_5.toUpperCase().indexOf(filter) > -1;
+                  names_8 =
+                    txtValue_6.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_7.toUpperCase().indexOf(filter) > -1;
+                  names_10 =
+                    txtValue_8.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_9.toUpperCase().indexOf(filter) > -1;
+                  names_12 =
+                    txtValue_10.toUpperCase().indexOf(filter) > -1 ||
+                    txtValue_11.toUpperCase().indexOf(filter) > -1;
+
+                  if (
+                    names_2 ||
+                    names_4 ||
+                    names_6 ||
+                    names_8 ||
+                    names_10 ||
+                    names_12
+                  ) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
+            }
+
+            function myClear_2() {
+              document.getElementById("myInput_2").value = "";
+              myFunction_2();
+            }
+          </script>
+        </div>
+      </div>
+    </section>
+
+    <!--===============================================================================================-->
+    <script src="{% static 'Employee_TableView_Static/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'Employee_TableView_Static/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'Employee_TableView_Static/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'Employee_TableView_Static/vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'Employee_TableView_Static/js/main.js' %}"></script>
+
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+  </body>
+</html>

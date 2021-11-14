@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Employee Edit</title>
+    <!-- Mobile Specific Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!-- Font-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_Form_Static/css/montserrat-font.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Employee_Form_Static/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}"
+    />
+    <!-- Main Style Css -->
+    <link
+      rel="stylesheet"
+      href="{% static 'Employee_Form_Static/css/style.css' %}"
+    />
+
+    <!-- favicons
+    ================================================== -->
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static 'apple-touch-icon.png' %}"
+    />
+    <link rel="manifest" href=" {% static 'site.webmanifest' %}" />
+    <link
+      rel="shortcut icon"
+      href=" {% static 'favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <link rel="icon" href=" {% static 'favicon.ico' %}" type="image/x-icon" />
+  </head>
+  <body class="form-v10">
+    <div class="page-content">
+      <div class="form-v10-content" style="width: 1800px">
+        <form
+          class="form-detail"
+          action="{% url 'employee:update'%}"
+          method="POST"
+          id="myform"
+        >
+          {% csrf_token %}
+          <div class="form-left">
+            <h2>General Infomation</h2>
+            {% for i in tb_cateory_3_data %}
+
+            <input type="hidden" name="id_index_3" value="{{i.0}}" />
+            <div class="form-row form-row-1">
+              <input
+                type="text"
+                name="your_name"
+                id="your_name"
+                class="input-text"
+                value="{{i.1}}"
+              />
+            </div>
+            <div class="form-row form-row-2">
+              <input
+                type="text"
+                name="father_name"
+                id="father_name"
+                class="input-text"
+                value="{{i.2}}"
+              />
+            </div>
+            <div class="form-row form-row-3">
+              <input
+                type="text"
+                name="gender"
+                id="gender"
+                class="input-text"
+                value="{{i.3}}"
+              />
+            </div>
+            <div class="form-row form-row-1">
+              <input
+                type="text"
+                name="age"
+                id="age"
+                class="input-text"
+                value="{{i.4}}"
+              />
+            </div>
+            <div class="form-row form-row-2">
+              <input
+                type="text"
+                name="height_weight"
+                id="height_weight"
+                class="input-text"
+                value="{{i.5}}"
+              />
+            </div>
+            <div class="form-row form-row-3">
+              <input
+                type="text"
+                name="date_of_birth"
+                id="date_of_birth"
+                class="input-text"
+                value="{{i.6}}"
+              />
+            </div>
+            <div class="form-row form-row-1">
+              <input
+                type="text"
+                name="marital_status"
+                id="marital_status"
+                class="input-text"
+                value="{{i.7}}"
+              />
+            </div>
+            <div class="form-row form-row-2">
+              <input
+                type="text"
+                name="languages_known"
+                id="languages_known"
+                class="input-text"
+                value="{{i.8}}"
+              />
+            </div>
+            <div class="form-row form-row-3">
+              <input
+                type="text"
+                name="country"
+                id="country"
+                class="input-text"
+                value="{{i.9}}"
+              />
+            </div>
+            <div class="form-row form-row-1">
+              <input
+                type="text"
+                name="present_address"
+                id="present_address"
+                class="input-text"
+                value="{{i.10}}"
+              />
+            </div>
+            <div class="form-row form-row-2">
+              <input
+                type="text"
+                name="permanent_address"
+                id="permanent_address"
+                class="input-text"
+                value="{{i.11}}"
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                name="email"
+                class="input-text"
+                id="email"
+                value="{{i.12}}"
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                name="phone"
+                class="input-text"
+                id="phone"
+                value="{{i.13}}"
+              />
+            </div>
+
+            {% endfor %}
+          </div>
+
+          <div class="form-right">
+            <h2>Job Details</h2>
+            {% for i in tb_cateory_4_data %}
+
+            <input type="hidden" name="id_index_4" value="{{i.0}}" />
+            <div class="form-row">
+              <input
+                type="text"
+                name="title"
+                class="input-text"
+                id="title"
+                value="{{i.1}}"
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="text"
+                name="employee_id"
+                class="input-text"
+                id="employee_id"
+                value="{{i.2}}"
+              />
+            </div>
+            <div class="form-row form-row-1">
+              <input
+                type="text"
+                name="date_of_appointment"
+                class="input-text"
+                id="date_of_appointment"
+                value="{{i.3}}"
+              />
+            </div>
+            <div class="form-row form-row-2">
+              <input
+                type="text"
+                name="date_of_confirmation"
+                class="input-text"
+                id="date_of_confirmation"
+                value="{{i.4}}"
+              />
+            </div>
+            <div class="form-row form-row-3">
+              <input
+                type="text"
+                name="date_of_joining"
+                class="input-text"
+                id="date_of_joining"
+                value="{{i.5}}"
+              />
+            </div>
+            <div class="form-row form-row-3">
+              <input
+                type="text"
+                name="department_posted"
+                class="input-text"
+                id="department_posted"
+                value="{{i.6}}"
+              />
+            </div>
+            <div class="form-row form-row-1">
+              <input
+                type="text"
+                name="monthly_contribution"
+                class="input-text"
+                id="monthly_contribution"
+                value="{{i.7}}"
+              />
+            </div>
+            <div class="form-row form-row-2">
+              <input
+                type="text"
+                name="education_qualification"
+                class="input-text"
+                id="education_qualification"
+                value="{{i.8}}"
+              />
+            </div>
+            <div class="form-row form-row-3">
+              <input
+                type="text"
+                name="professional_qualification"
+                class="input-text"
+                id="professional_qualification"
+                value="{{i.9}}"
+              />
+            </div>
+
+            {% endfor %}
+
+            <div class="form-row-last" style="padding-left: 0px">
+              <input
+                type="submit"
+                class="register"
+                style="margin: 6px 0 50px 60px; font-size: 30px; width: 775px"
+                form="myform"
+                formmethod="POST"
+                value="Submit Information"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
