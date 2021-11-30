@@ -13,13 +13,16 @@ from django.contrib import messages
 import mysql.connector
 
 #                                               XAMPP SERVER DATABASE MYSQL 
-# conn = mysql.connector.connect(host="sql4.freesqldatabase.com", user='sql4450160', password='aEnP2L54tL', port="3306")
+# conn = mysql.connector.connect(host="localhost", user='root')
 # print('Successfully Created Database')
 # cur = conn.cursor(buffered=False)
 # #cur.execute("DROP DATABASE allah_rakha")
 # cur.execute("CREATE DATABASE IF NOT EXISTS allah_rakha")
+# conn = mysql.connector.connect(host="localhost", user='root', database="allah_rakha")
+# print('Successfully Created Database')
+# cur = conn.cursor(buffered=False)
 
-conn = mysql.connector.connect(host="sql4.freesqldatabase.com", user='sql4450160', password='aEnP2L54tL', port="3306", database = "sql4450160")
+conn = mysql.connector.connect(host="sql11.freesqldatabase.com", user='sql11455348', password='BwFwAHbX33', port="3306", database = "sql11455348")
 print('Successfully Connected Database')
 cur = conn.cursor(buffered=False)
 
