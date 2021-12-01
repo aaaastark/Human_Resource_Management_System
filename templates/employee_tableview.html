@@ -334,7 +334,6 @@
               <table>
                 <thead>
                   <tr class="table100-head">
-                    <th class="column2">Index</th>
                     <th class="column2">Title</th>
                     <th class="column2">Employee ID</th>
                     <th class="column2">Date of Appointment</th>
@@ -344,41 +343,20 @@
                     <th class="column2">Monthly Contribution</th>
                     <th class="column2">Eduction Qualification</th>
                     <th class="column2">Professional Qualification</th>
-                    <th class="column2">Editing</th>
-                    <th class="column2">Deleting</th>
                   </tr>
                 </thead>
                 <tbody id="myTable_2">
-                  {% for i in tb_cateory_4_data %}
+                  {% for i in tb_cateory_3_data %}
                   <tr>
-                    <td class="column2">{{i.0}}</td>
-                    <td class="column2">{{i.1}}</td>
-                    <td class="column2">{{i.2}}</td>
-                    <td class="column2">{{i.3}}</td>
-                    <td class="column2">{{i.4}}</td>
-                    <td class="column1">{{i.5}}</td>
-                    <td class="column2">{{i.6}}</td>
-                    <td class="column2">{{i.7}}</td>
-                    <td class="column2">{{i.8}}</td>
-                    <td class="column2">{{i.9}}</td>
-                    <td class="column2">
-                      <button class="btn btn-outline-warning" type="submit">
-                        <a
-                          href="/employees/employee_table_edit/{{i.0}}"
-                          style="color: #000000"
-                          >Edit</a
-                        >
-                      </button>
-                    </td>
-                    <td class="column2">
-                      <button class="btn btn-outline-warning" type="submit">
-                        <a
-                          href="/employees/employee_table_delete_view/{{i.0}}"
-                          style="color: #000000"
-                          >Delete</a
-                        >
-                      </button>
-                    </td>
+                    <td class="column2">{{i.14}}</td>
+                    <td class="column2">{{i.15}}</td>
+                    <td class="column2">{{i.16}}</td>
+                    <td class="column2">{{i.17}}</td>
+                    <td class="column2">{{i.18}}</td>
+                    <td class="column1">{{i.19}}</td>
+                    <td class="column2">{{i.20}}</td>
+                    <td class="column2">{{i.21}}</td>
+                    <td class="column2">{{i.22}}</td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -403,9 +381,6 @@
                 td_6 = tr[i].getElementsByTagName("td")[6];
                 td_7 = tr[i].getElementsByTagName("td")[7];
                 td_8 = tr[i].getElementsByTagName("td")[8];
-                td_9 = tr[i].getElementsByTagName("td")[9];
-                td_10 = tr[i].getElementsByTagName("td")[10];
-                td_11 = tr[i].getElementsByTagName("td")[11];
                 if (
                   td_0 ||
                   td_1 ||
@@ -416,9 +391,6 @@
                   td_6 ||
                   td_7 ||
                   td_8 ||
-                  td_9 ||
-                  td_10 ||
-                  td_11
                 ) {
                   txtValue_0 = td_0.textContent || td_0.innerText;
                   txtValue_1 = td_1.textContent || td_1.innerText;
@@ -429,9 +401,7 @@
                   txtValue_6 = td_6.textContent || td_6.innerText;
                   txtValue_7 = td_7.textContent || td_7.innerText;
                   txtValue_8 = td_8.textContent || td_8.innerText;
-                  txtValue_9 = td_9.textContent || td_9.innerText;
-                  txtValue_10 = td_10.textContent || td_10.innerText;
-                  txtValue_11 = td_11.textContent || td_11.innerText;
+
                   names_2 =
                     txtValue_0.toUpperCase().indexOf(filter) > -1 ||
                     txtValue_1.toUpperCase().indexOf(filter) > -1;
@@ -445,19 +415,13 @@
                     txtValue_6.toUpperCase().indexOf(filter) > -1 ||
                     txtValue_7.toUpperCase().indexOf(filter) > -1;
                   names_10 =
-                    txtValue_8.toUpperCase().indexOf(filter) > -1 ||
-                    txtValue_9.toUpperCase().indexOf(filter) > -1;
-                  names_12 =
-                    txtValue_10.toUpperCase().indexOf(filter) > -1 ||
-                    txtValue_11.toUpperCase().indexOf(filter) > -1;
-
+                    txtValue_8.toUpperCase().indexOf(filter) > -1;
                   if (
                     names_2 ||
                     names_4 ||
                     names_6 ||
                     names_8 ||
-                    names_10 ||
-                    names_12
+                    names_10
                   ) {
                     tr[i].style.display = "";
                   } else {
