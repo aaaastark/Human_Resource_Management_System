@@ -42,3 +42,8 @@ Four: 	Follow the ERD Diagram Schema of this HRMS Project.
 7:	Run Command:	python manage.py runserver
 
 8:	Open Local Host into your Browser Window.
+
+# Follow the ERD Diagram for enter data into database tables.
+
+![ERD-HRMS-Final](https://user-images.githubusercontent.com/74346775/150185925-d9437f24-a464-4afa-9b60-acd48004513a.png)
+
