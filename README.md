@@ -10,7 +10,7 @@ Username:	sql5462611
 
 Password:		DtMMiL2YPq
 
-## ==========================================================================================
+## ==========================================
 
 First:	XAMPP (open and run)
 
@@ -25,7 +25,7 @@ Third:	Database automatic create in your MySqlAdmin (Panel)
 
 Four: 	Follow the ERD Diagram Schema of this HRMS Project.
 
-## ========================================================================================
+## ===========================================
 
 1: 	Extract the zip file.
 
