@@ -8,7 +8,7 @@ Password:		DtMMiL2YPq
 ==========================================================================================
 First:	XAMPP (open and run)
 
-Second: 	Go Into => 	HRMS_APP-UnderWork\Employee\views.py
+Second: 	Go Into => 	Employee\views.py
 	Commit Close and Open..........
 	
 ===>	XAMPP SERVER DATABASE MYSQL 	(Remove Commit except)     #cur.execute("DROP DATABASE allah_rakha")
@@ -17,14 +17,14 @@ Second: 	Go Into => 	HRMS_APP-UnderWork\Employee\views.py
 
 Third:	Database automatic create in your MySqlAdmin (Panel)
 
-
 Four: 	Follow the ERD Diagram Schema of this HRMS Project.
 ========================================================================================
 
 1: 	Extract the zip file.
 2: 	Open terminal in existing folder (current folder where these files are placed)
-3:	Run Command:	./HRMS_VENV/Scripts/activate
-4:	Here: Active the virtual envirnmet of Python
-5:	Run Command:	cd HRMS_APP-UnderWork   (move into this folder)
-6:	Run Command:	python manage.py runserver
-7:	Open Local Host into your Browser Window.
+3:	Run Command:	venv HRMS_VENV
+4:	Run Command:	python -m pip install requirements.txt
+5:	Run Command:	./HRMS_VENV/Scripts/activate
+6:	Here: Active the virtual envirnmet of Python
+7:	Run Command:	python manage.py runserver
+8:	Open Local Host into your Browser Window.
